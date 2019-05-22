@@ -1,3 +1,4 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -6,27 +7,21 @@
 </p>
 
 <p>
-  <strong>Chef:</strong>
-  <%= link_to @restaurant.chef, chef_restaurant_path(@restaurant) %>
-</p>
-
-
-<p>
   <strong>Address:</strong>
   <%= @restaurant.address %>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @restaurant.description %>
+  <strong>Category:</strong>
+  <%= @restaurant.category %>
 </p>
 
 <p>
-  <strong>Stars:</strong>
-  <%= @restaurant.stars %>
+  <strong>Phone Number:</strong>
+  <%= @restaurant.phone_number %>
 </p>
 
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+
 <%= link_to 'Back', restaurants_path %>
 
 <br>
@@ -36,6 +31,7 @@
 
 <ul>
   <% @restaurant.reviews.each do |review| %>
-    <li><%= review.content %></li>
+    <li><%= review.content  %><%= "*" * review.rating%></li>
   <% end %>
 </ul>
+</div>
